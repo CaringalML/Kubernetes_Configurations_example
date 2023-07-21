@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ormeco-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ormeco-fullstack-laravel
+  template:
+    metadata:
+      labels:
+        app: ormeco-fullstack-laravel
+    spec:
+      containers:
+        - name: ormeco-fullstack-laravel
+          image: rencecaringal000/ormeco-kps
+          ports:
+            - containerPort: 8000

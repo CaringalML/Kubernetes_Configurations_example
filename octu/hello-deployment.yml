@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rencecaringal000-hello-internet
+  template:
+    metadata:
+      labels:
+        app: rencecaringal000-hello-internet
+    spec:
+      containers:
+        - name: rencecaringal000-hello-internet
+          image: rencecaringal000/hello-internet:1.0
+          ports:
+            - containerPort: 80
